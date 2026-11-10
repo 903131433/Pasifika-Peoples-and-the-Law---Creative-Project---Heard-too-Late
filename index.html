@@ -265,6 +265,14 @@ footer li{margin-bottom:.35rem}
 .illus .minute{transform-origin:0 0;animation:tick 60s steps(60) infinite}
 @keyframes tick{to{transform:rotate(360deg)}}
 @media (prefers-reduced-motion:reduce){.illus .float,.illus .minute{animation:none}}
+
+/* cliff interventions: fence at top, nets partway down, better ambulance near bottom, map across */
+.fence,.ledge.lit .fence{left:-3.25rem;top:1.05rem;width:2.5rem;height:2rem;border:0;border-radius:0;background:none}
+.fence svg{width:100%;height:100%;display:block;opacity:.28;filter:grayscale(1);transition:opacity .3s,filter .3s,transform .3s}
+.ledge.lit .fence svg{opacity:1;filter:none;transform:scale(1.12)}
+.cliff{padding-left:3.4rem}
+.cliff::before{width:2.4rem}
+.ledge:first-child{border-top:0}
 </style>
 </head>
 <body data-depth="1">
@@ -491,28 +499,28 @@ footer li{margin-bottom:.35rem}
     <section class="page" id="p-cliff" aria-labelledby="h-cliff">
       <h1 id="h-cliff" tabindex="-1">What if it went differently?</h1>
       <p class="lede">Should we build a fence at the top of the cliff, or park an ambulance at the bottom? Section 27 is like the ambulance. It turns up after most of the damage is done. Barbara-Luhia Graham records the criticism that it is "too little too late".</p>
-      <p>Here's Sione's story again, with changes Pacific researchers and community members have asked for. Switch them on and see what they change.</p>
+      <p>Here's Sione's story again, with changes Pacific researchers and community members have asked for. Switch on fences, nets and a better ambulance.</p>
       <div class="firstheard" aria-live="polite">
         <p>Someone in the system first hears Sione's story <strong id="heardAt">at sentencing, five months after the arrest</strong></p>
         <span class="track" aria-hidden="true">Top <i></i><i></i><i></i><i></i><i class="end"></i> Bottom</span>
       </div>
       <ol class="cliff">
         <li class="ledge" data-at="before any of this, through a youth worker" data-rank="1">
-          <span class="fence" aria-hidden="true"></span>
+          <span class="fence k-fence" aria-hidden="true"><svg viewBox="0 0 40 32"><g fill="var(--grass)"><rect x="3" y="6" width="5" height="24" rx="1"/><rect x="17.5" y="6" width="5" height="24" rx="1"/><rect x="32" y="6" width="5" height="24" rx="1"/><path d="M3 6 l2.5 -4 l2.5 4z M17.5 6 l2.5 -4 l2.5 4z M32 6 l2.5 -4 l2.5 4z"/><rect x="0" y="11" width="40" height="4" rx="1"/><rect x="0" y="21" width="40" height="4" rx="1"/></g></svg></span>
           <h3>Before the arrest</h3>
           <p class="was">Nobody outside the family knows Sione is struggling.</p>
           <label class="switch"><input type="checkbox"><span>Pasifika-led community services</span></label>
           <p class="now" hidden>A Pacific youth worker already knows Sione from school. When his shifts get cut, she helps him find work and a room. He might never have driven to the liquor store that night.</p>
         </li>
         <li class="ledge" data-at="the morning after the arrest" data-rank="2">
-          <span class="fence" aria-hidden="true"></span>
+          <span class="fence k-net" aria-hidden="true"><svg viewBox="0 0 40 32"><g fill="none" stroke="var(--sea)" stroke-width="2.2" stroke-linecap="round"><path d="M2 6 Q20 30 38 6"/><path d="M2 6 L38 6"/><path d="M8 6 Q12 18 14 21 M14 6 Q17 20 20 24 M20 6 L20 24 M26 6 Q23 20 20 24 M32 6 Q28 18 26 21"/><path d="M5 12 Q20 20 35 12 M9 17 Q20 24 31 17"/></g><circle cx="2" cy="6" r="2.5" fill="var(--rock-edge)"/><circle cx="38" cy="6" r="2.5" fill="var(--rock-edge)"/></svg></span>
           <h3>The night of the arrest</h3>
           <p class="was">Nobody in the family knows how to get a lawyer.</p>
           <label class="switch"><input type="checkbox"><span>Free early legal help and community law</span></label>
           <p class="now" hidden>A community law worker calls Alisi the next morning and explains what will happen, in Tongan.</p>
         </li>
         <li class="ledge" data-at="at his first court appearance" data-rank="3">
-          <span class="fence" aria-hidden="true"></span>
+          <span class="fence k-net" aria-hidden="true"><svg viewBox="0 0 40 32"><g fill="none" stroke="var(--sea)" stroke-width="2.2" stroke-linecap="round"><path d="M2 6 Q20 30 38 6"/><path d="M2 6 L38 6"/><path d="M8 6 Q12 18 14 21 M14 6 Q17 20 20 24 M20 6 L20 24 M26 6 Q23 20 20 24 M32 6 Q28 18 26 21"/><path d="M5 12 Q20 20 35 12 M9 17 Q20 24 31 17"/></g><circle cx="2" cy="6" r="2.5" fill="var(--rock-edge)"/><circle cx="38" cy="6" r="2.5" fill="var(--rock-edge)"/></svg></span>
           <h3>The bail hearing</h3>
           <p class="was">No address. Five months remanded in custody.</p>
           <label class="switch"><input type="checkbox"><span>A Pacific liaison officer at court</span></label>
@@ -521,7 +529,7 @@ footer li{margin-bottom:.35rem}
           <p class="now" hidden>Someone from an Auckland bail house charity stands up in the public gallery and offers Sione a bed. The judge grants bail.</p>
         </li>
         <li class="ledge" data-at="before sentencing, without the family paying" data-rank="4">
-          <span class="fence" aria-hidden="true"></span>
+          <span class="fence k-ambo" aria-hidden="true"><svg viewBox="0 0 40 32"><rect x="1" y="9" width="38" height="16" rx="3" fill="var(--card)" stroke="var(--alert)" stroke-width="2"/><rect x="27" y="4" width="12" height="10" rx="2" fill="var(--card)" stroke="var(--alert)" stroke-width="2"/><path d="M12 12 h4 v4 h4 v4 h-4 v4 h-4 v-4 h-4 v-4 h4 z" fill="var(--alert)"/><circle cx="9" cy="27" r="4" fill="var(--ink)"/><circle cx="31" cy="27" r="4" fill="var(--ink)"/><rect x="31" y="0" width="5" height="4" rx="1" fill="var(--alert)"/></svg></span>
           <h3>Being heard</h3>
           <p class="was">A report needs money, and speaking in court means time off work or family duties.</p>
           <label class="switch"><input type="checkbox"><span>Funded reports by accredited Pacific writers</span></label>
@@ -530,7 +538,7 @@ footer li{margin-bottom:.35rem}
           <p class="now" hidden>A navigator helps you work out what to say and asks for a hearing date you can attend.</p>
         </li>
         <li class="ledge" data-rank="9">
-          <span class="fence" aria-hidden="true"></span>
+          <span class="fence k-map" aria-hidden="true"><svg viewBox="0 0 40 32"><path d="M2 6 L13 2 L27 6 L38 2 L38 26 L27 30 L13 26 L2 30 Z" fill="var(--card)" stroke="var(--sea)" stroke-width="2" stroke-linejoin="round"/><path d="M13 2 V26 M27 6 V30" stroke="var(--sea)" stroke-width="1.5" opacity=".6"/><path d="M20 9 a5 5 0 0 1 5 5 c0 4 -5 9 -5 9 s-5 -5 -5 -9 a5 5 0 0 1 5 -5z" fill="var(--alert)"/><circle cx="20" cy="14" r="2" fill="var(--card)"/></svg></span>
           <h3>Across the whole cliff</h3>
           <p class="was">Ethnicity isn't recorded well, so it's hard to see where Pasifika people fall through the gaps.</p>
           <label class="switch"><input type="checkbox"><span>Accurate ethnicity records</span></label>
